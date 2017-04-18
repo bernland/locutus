@@ -14,6 +14,7 @@ module.exports = function number_format (number, decimals, decPoint, thousandsSe
   // bugfixed by: Diogo Resende
   // bugfixed by: Rival
   // bugfixed by: Brett Zamir (http://brett-zamir.me)
+  // bugfixed by: Bernhard Schenkenfelder (http://www.schenkenfelder.co.at)
   //  revised by: Jonas Raoni Soares Silva (http://www.jsfromhell.com)
   //  revised by: Luke Smith (http://lucassmith.name)
   //    input by: Kheang Hok Chin (http://www.distantia.ca/)
@@ -54,7 +55,7 @@ module.exports = function number_format (number, decimals, decPoint, thousandsSe
   var prec = !isFinite(+decimals) ? 0 : Math.abs(decimals)
   var sep = (typeof thousandsSep === 'undefined') ? ',' : thousandsSep
   var dec = (typeof decPoint === 'undefined') ? '.' : decPoint
-  var s = ''
+  var s = []
 
   var toFixedFix = function (n, prec) {
     var k = Math.pow(10, prec)
